@@ -1,4 +1,4 @@
-const { generateText, validateISBN, validateTitle, validateAuthor, checkAndGenerate } = require('../scripts/util.js');
+const { generateText, validateISBN, validateTitle, validateAuthor, checkAndGenerate, checkRegex } = require('../scripts/util.js');
 
 /**
  * Unit tests
@@ -11,6 +11,14 @@ test('should output title, author and ISBN', () => {
 test('should output undefined text', () => {
     const value = generateText();
     expect(value).toMatch('Title: undefined, Author: undefined, ISBN: undefined');
+});
+
+test('should check regular expression correctly', () => {
+    const value = 'James Bond - 007';
+    const regex = /^[a-zA-Z0-9\s][^\@\£]*$/
+    const regex2 = /^[^[0-9\-]]*$/
+    expect(checkRegex(value, regex)).toBeTruthy();
+    expect(checkRegex(value, regex2)).toBeFalsy();
 });
 
 /**
