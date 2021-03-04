@@ -1,6 +1,6 @@
 exports.generateText = (title, author, isbn) => {
     // Returns generated text
-    return `Title: ${title}, Author: ${author},  ISBN: ${isbn}`
+    return `Title: ${title}, Author: ${author}, ISBN: ${isbn}`
 };
 
 exports.createElement = (type, text, className) => {
