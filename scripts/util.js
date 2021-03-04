@@ -1,6 +1,6 @@
 exports.generateText = (title, author, isbn) => {
     // Returns generated text
-    return `Title: ${title}, Author: ${author}, ISBN: ${isbn}`
+    return `Title: ${title}, Author: ${author}, ISBN: ${isbn}`;
 };
 
 exports.createElement = (type, text, className) => {
@@ -12,17 +12,17 @@ exports.createElement = (type, text, className) => {
 };
 
 exports.validateTitle = (value) => {
-    const regex = /^([a-zA-Z0-9\s\!\?\'])*$/;
+    const regex = /^[^\{\}\[\]\"\£\$\%\^\&\*\`\|\\\@\#\>\<\;\_\+\=\~]*$/;
     return checkRegex(value, regex);
 };
 
 exports.validateAuthor = (value) => {
-    const regex = /^([a-zA-Z\s\D])*$/;
+    const regex = /^[^0-9\{\}\[\]\!\"\£\$\%\^\&\*\(\)\`\|\\\@\#\>\<\;\:\_\+\=\~]*$/;
     return checkRegex(value, regex);
 };
 
 exports.validateISBN = (value) => {
-    const regex = /[0-9]{13}/;
+    const regex = /^[0-9{13}]*$/;
     return checkRegex(value, regex);
 };
 
@@ -31,4 +31,4 @@ function checkRegex(value, regex) {
         return false;
     }
     return true;
-};
+}
