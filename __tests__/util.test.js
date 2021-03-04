@@ -1,13 +1,16 @@
 const { generateText, validateISBN, validateTitle, validateAuthor } = require('../scripts/util.js');
 
+/**
+ * Unit tests
+ */
 test('should output title, author and ISBN', () => {
     const value = generateText('Harry Potter', 'J.K. Rowling', 2644873902756);
     expect(value).toMatch('Title: Harry Potter, Author: J.K. Rowling, ISBN: 2644873902756');
 });
 
-test('should output data-less text', () => {
-    const value = generateText(undefined, null, null);
-    expect(value).toMatch('Title: undefined, Author: null, ISBN: null');
+test('should output undefined text', () => {
+    const value = generateText();
+    expect(value).toMatch('Title: undefined, Author: undefined, ISBN: undefined');
 });
 
 test('should pass the validation - ISBN', () => {
