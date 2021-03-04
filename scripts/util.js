@@ -45,6 +45,7 @@ const generateText = (title, author, isbn) => {
 };
 
 exports.generateText = generateText;
+exports.checkRegex = checkRegex;
 exports.validateTitle = validateTitle;
 exports.validateAuthor = validateAuthor;
 exports.validateISBN = validateISBN;
