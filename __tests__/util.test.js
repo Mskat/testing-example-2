@@ -1,4 +1,4 @@
-const { generateText, validateISBN, validateTitle, validateAuthor } = require('../scripts/util.js');
+const { generateText, validateISBN, validateTitle, validateAuthor, checkAndGenerate } = require('../scripts/util.js');
 
 /**
  * Unit tests
@@ -13,6 +13,9 @@ test('should output undefined text', () => {
     expect(value).toMatch('Title: undefined, Author: undefined, ISBN: undefined');
 });
 
+/**
+ * Integration tests
+ */
 test('should pass the validation - ISBN', () => {
     const isbn = validateISBN('2644873942656');
     expect(isbn).toBeTruthy();
@@ -46,4 +49,9 @@ test('should pass the validation - author', () => {
 test('should NOT pass the validation - author', () => {
     const author = validateAuthor('Tom +Sunday');
     expect(author).toBeFalsy();
+});
+
+test('Should generate valid text output', () => {
+    const value = checkAndGenerate('Harry Potter', 'J.K. Rowling', 2644873902756);
+    expect(value).toMatch('Title: Harry Potter, Author: J.K. Rowling, ISBN: 2644873902756');
 });
