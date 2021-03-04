@@ -1,7 +1,7 @@
 const { generateText, createElement, validateAuthor, validateTitle, validateISBN } = require("./util");
 
 const startApp = () => {
-  // Initializes the app, registers the button click listener
+    // Initializes the app, registers the button click listener
     const button = document.querySelector('#btnAddBook');
     button.addEventListener('click', addBook);
 };
