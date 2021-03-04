@@ -28,7 +28,7 @@ const validateAuthor = (value) => {
 };
 
 const validateISBN = (value) => {
-    const regex = /^[0-9{13}]*$/;
+    const regex = /^[[0-9]{13}]*$/;
     return checkRegex(value, regex);
 };
 
