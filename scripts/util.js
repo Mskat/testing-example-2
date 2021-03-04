@@ -18,12 +18,12 @@ exports.checkAndGenerate = (title, author, isbn) => {
 };
 
 const validateTitle = (value) => {
-    const regex = /^[^\{\}\[\]\"\£\$\%\^\&\*\`\|\\\@\#\>\<\;\_\+\=\~]*$/;
+    const regex = /^[a-zA-Z0-9][^\{\}\[\]\"\£\$\%\^\&\*\`\|\\\@\#\>\<\;\_\+\=\~]*$/;
     return checkRegex(value, regex);
 };
 
 const validateAuthor = (value) => {
-    const regex = /^[^0-9\{\}\[\]\!\"\£\$\%\^\&\*\(\)\`\|\\\@\#\>\<\;\:\_\+\=\~]*$/;
+    const regex = /^[a-zA-Z][^0-9\{\}\[\]\!\"\£\$\%\^\&\*\(\)\`\|\\\@\#\>\<\;\:\_\+\=\~]*$/;
     return checkRegex(value, regex);
 };
 
