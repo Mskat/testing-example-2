@@ -32,7 +32,7 @@ const validateISBN = (value) => {
     return checkRegex(value, regex);
 };
 
-function checkRegex(value, regex) {
+const checkRegex = (value, regex) => {
     if (!String(value).match(regex)) {
         return false;
     }
